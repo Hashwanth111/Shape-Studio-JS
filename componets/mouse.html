@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #circle {
+            width: 20px;
+            height: 20px;
+            /* background-color: black; */
+            border: 2px solid yellow;
+            border-radius: 50%;
+            /* position: absolute; */
+            margin: 20px;
+            transition: 0.5s ease;
+        }
+
+        #box {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            transform: translate(-50%, -50%) rotate(140deg);
+            transition: all 0.3s linear;
+            pointer-events: none;
+            animation: zoom;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="circle"></div>
+    </div>
+    <button disabled></button>
+    <button id="helloBtn">Hello</button>
+    <script>
+        let bid = document.getElementById("box");
+        let circle = document.getElementById("circle");
+        let displayBox = true;
+        document.addEventListener("mousemove", (e) => {
+            if (displayBox) {
+                let x = e.clientX;
+                let y = e.clientY;
+                bid.style.borderRight = x > (window.innerWidth / 2) ? "none" : "2px solid yellow";
+                bid.style.borderBottom = x > (window.innerWidth / 2) ? "none" : "2px solid yellow"
+                bid.style.borderLeft = x < (window.innerWidth / 2) ? "none" : "2px solid yellow";
+                bid.style.borderTop = x < (window.innerWidth / 2) ? "none" : "2px solid yellow";
+                bid.style.top = y + "px";
+                bid.style.left = x + "px";
+            } else {
+                bid.style.border = "none"
+            }
+        });
+        document.getElementById("helloBtn").addEventListener("mouseenter", () => {
+            console.log(bid)
+            displayBox = !displayBox;
+            // console.log("data")
+            circle.style.transform = "scale(4)";
+
+        });
+        document.getElementById("helloBtn").addEventListener("mouseout", () => {
+            displayBox = !displayBox;
+            circle.style.transform = "scale(1)";
+        });
+    </script>
+</body>
+
+</html>

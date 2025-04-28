@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Div Scroll</title>
+  <style>
+    #content {
+      width: 200px;
+      height: 300px; /* big content to scroll */
+      background: linear-gradient(white, gray);
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+    <div id="content"></div>
+  <script>
+    let scrollDiv = document.getElementById("content");
+    scrollDiv.addEventListener("mousemove",(e)=>{
+        let x=e.clientX;
+        scrollDiv.style.top=x+20+"px";
+    })
+  </script>
+
+</body>
+</html>

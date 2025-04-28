@@ -1,0 +1,147 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roc Grotesk', sans-serif;
+    overflow: hidden;
+}
+.nav{
+    width: 65%;
+    height: 100px;
+    position: fixed;
+    background-color:rgba(232, 238, 60, 0.6);
+    display: flex;
+}
+#logo{
+    width: 20%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#navlist{
+    width: 80%;
+    height: 90%;
+    cursor: pointer;
+    /* border: 1px solid red; */
+}
+#navul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+#navul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    height: 50%;
+    width: 20%;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+#imglogo{
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 50%;
+}
+#MainDiv{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+
+}
+#left{
+    width: 65%;
+    height: 100%;
+    overflow-y: scroll;
+}
+#left::-webkit-scrollbar{
+    display: none;
+}
+.listitems{
+    width: 100%;
+    height: 200px;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.id{
+    width: 20%;
+    height: 100%;
+    font-size: 4rem;
+    /* border: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    transition: 0.2s linear;
+    color: gold;
+}
+.title{
+    width: 70%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    -webkit-text-stroke:3px black;
+    color: transparent;
+    transition: 0.5s linear;
+}
+.arrows{
+    font-size: 4rem;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    transition: 0.2s linear;
+    color: gold;
+}
+#right{
+    width: 35%;
+    height: 100vh;
+    position: relative;
+}
+#image1{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0; 
+    z-index: -1;
+}
+#image2{
+    width: max-content;
+    height: 100%;
+    position: fixed;
+    transition: 5s ease-in;
+}
+/* mouse cursor */
+#circle {
+    width: 40px;
+    height: 40px;
+    border: 2px solid gold;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.2s linear;
+    z-index: 10;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%) 
+}
+.footer1{
+    height: 100px;
+    background-color: black;
+    display:none;
+
+}
+.footerspan{
+    color: white;
+    font-size: 2rem;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: black;
+        }
+
+        * {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .divspan {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            /* only one position needed */
+            border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* put both div and span inside this */
+        .inner-div,
+        .inner-span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.5s ease;
+            border: 1px solid red;
+        }
+
+        .inner-div {
+            width: 300px;
+            height: 300px;
+            border: 5px solid red;
+            background-color: transparent;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .inner-span {
+            font-size: 8rem;
+            height: 200px;
+            color: white;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        /* IMPORTANT: hover the whole divspan */
+        .divspan:hover .inner-div,
+        .divspan:hover .inner-span {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        .main {
+            width: auto;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #circle {
+            width: 20px;
+            height: 20px;
+            /* background-color: black; */
+            border: 2px solid yellow;
+            border-radius: 50%;
+            /* position: absolute; */
+            margin: 20px;
+            transition: 0.5s ease;
+            background-color: transparent;
+        }
+
+        #box {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            transform: translate(-50%, -50%) rotate(140deg);
+            transition: all 0.3s linear;
+            pointer-events: none;
+            animation: zoom;
+            z-index: 2;
+            background-color: transparent;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="circle"></div>
+    </div>
+    <div class="main" >
+        <div class="divspan"  id="mains" >
+            <!-- <div class="inner-div"></div> -->
+            <span class="inner-span">Living Room</span>
+        </div>
+    </div>
+</body>
+<script>
+let mains = document.getElementById("mains");
+let bid = document.getElementById("box");
+let circle = document.getElementById("circle");
+let displayBox = true;
+
+document.addEventListener("mousemove", (e) => {
+    let x = e.clientX;
+    let y = e.clientY;
+    bid.style.top = y + "px";
+    bid.style.left = x + "px";
+    
+    if (displayBox) {
+        bid.style.borderRight = x > (window.innerWidth / 2) ? "none" : "2px solid yellow";
+        bid.style.borderBottom = x > (window.innerWidth / 2) ? "none" : "2px solid yellow";
+        bid.style.borderLeft = x < (window.innerWidth / 2) ? "none" : "2px solid yellow";
+        bid.style.borderTop = x < (window.innerWidth / 2) ? "none" : "2px solid yellow";
+    } else {
+        bid.style.border = "none";
+    }
+});
+
+mains.addEventListener("mouseenter", () => {
+    displayBox = false;  // hide the border
+    circle.style.transform = "scale(3)";  // scale up circle
+});
+
+mains.addEventListener("mouseleave", () => {
+    displayBox = true;  // show the border again
+    circle.style.transform = "scale(1)";  // scale back circle
+});
+
+</script>
+</html>
