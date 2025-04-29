@@ -3,7 +3,7 @@ let left = document.getElementById("left");
 let icon=[
     {
         label:"icon",
-        src:"../assits/SHAPE_transparent_logo.png"
+        src:"./assits/SHAPE_transparent_logo.png"
     }
 ]
 icon.map((ele)=>{
@@ -41,15 +41,15 @@ navList.map((ele)=>{
 let videos = [
     {
         title: "Peace Den",
-        src: "../assits/video6.mp4"
+        src: "./assits/video6.mp4"
     },
     {
         title: "Kew Gardens",
-        src: "../assits/video3.mp4"
+        src: "./assits/video3.mp4"
     },
     {
         title: "Mansion Green",
-        src: "../assits/video1.mp4"
+        src: "./assits/video1.mp4"
     }
 ]
 let main = document.getElementById("main");
@@ -67,11 +67,11 @@ videos.map((e) => {
 let footer_list = [
     {
         title: "instagram",
-        src: "../assits/clipart1221050.png"
+        src: "./assits/clipart1221050.png"
     },
     {
         title: "twitter",
-        src: "../assits/clipart363919.png"
+        src: "./assits/clipart363919.png"
     },
 ]
 let footerul=document.getElementById("footer-list");
