@@ -1,0 +1,47 @@
+@media only screen and (width<1400px) {
+    .nav{
+        font-size: 1.2rem;
+    }
+    .inner-span {
+        font-size: 6rem;
+    }
+    #navA{
+        display: none;
+    }
+    
+}
+@media only screen and (width<900px) {
+    .nav{
+        font-size: 1rem;
+    }
+    .inner-span {
+        font-size: 4rem;
+    }
+    #navA{
+        display: none;
+    }
+}
+@media only screen and (width<768px) {
+    .inner-span {
+        font-size: 2rem;
+    }
+    .footer{
+        display: none;
+    }
+    .footer1{
+        height: 100px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navlis{
+        display: none;
+    }
+    #labelpbtn{
+        font-size: 1rem;
+    }
+    #navA{
+        display: block;
+    }
+}
